@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=block');
-
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    font-display: swap;
     color: #333;
 }
 
@@ -18,12 +16,18 @@ div div div a {
 }
 
 .header {
+    width: 100%;
     background: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
-    width: 100%;
     top: 0;
     z-index: 1000;
+    line-height: 1.6;
+}
+
+.bg-header-scroll {
+    background-color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
 }
 
 .container {
@@ -60,14 +64,18 @@ div div div a {
 }
 
 .hero-banner {
+    width: 100%;
     position: relative;
     margin-top: 70px;
     overflow: hidden;
+    line-height: 1.6;
 }
 
 .hero-image {
     width: 100%;
+    max-width: 100%;
     display: block;
+    height: auto;
 }
 
 .hero-content {
@@ -101,22 +109,44 @@ div div div a {
     border-radius: 8px;
     font-weight: 600;
     font-size: 18px;
-    transition: background 0.3s ease;
+    transition: background ease .2s;
 }
 
 .cta-button a:hover {
-    background: #1d4ed8;
+    background-color: #1d4ed8;
 }
 
 .ad-banner {
+    width: 100%;
     background: #f3f4f6;
+    min-height: 80px;
     text-align: center;
     margin: 20px 0;
 }
 
+.ad-banner div {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    padding: 23px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ad-banner button {
+    background: white;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin-left:
+    20px; border-radius: 5px;
+    cursor: pointer;
+}
+
 .products-section {
+    width: 100%;
     padding: 80px 0;
-    background: #f9fafb;
+    background-color: #f9fafb;
+    line-height: 1.6;
 }
 
 .section-title {
@@ -125,13 +155,14 @@ div div div a {
     text-align: center;
     margin-bottom: 50px;
     color: #1f2937;
+    line-height: 1.6;
 }
 
 .product-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     gap: 30px;
-    margin-top: 40px;
+    margin: 40px 0;
 }
 
 .product-item {
@@ -139,7 +170,7 @@ div div div a {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .product-item:hover {
@@ -148,6 +179,8 @@ div div div a {
 
 .product-item img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .product-info {
@@ -167,10 +200,13 @@ div div div a {
 }
 
 .carousel-container {
+    width: 100%;
+    min-height: 120px;
     padding: 60px 0;
     background: #1f2937;
     color: white;
     text-align: center;
+    line-height: 1.6;
 }
 
 .carousel-title {
@@ -179,8 +215,29 @@ div div div a {
     margin-bottom: 40px;
 }
 
+.testimonials-holder {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 12px;
+}
+.testimonials-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.testimonials-author {
+    font-size: 16px;
+    font-weight: bold;
+}
+.testimonials-rating {
+    margin-top: 10px;
+}
 .features-section {
+    width: 100%;
     padding: 80px 0;
+    line-height: 1.6;
 }
 
 .features-grid {
@@ -231,19 +288,75 @@ div div div a {
 }
 
 .contact-section {
+    width: 100%;
     padding: 80px 0;
     background: #f9fafb;
+    line-height: 1.6;
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form .mb-20 {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 16px;
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background: #2563eb;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    font-family: "Roboto", sans-serif;
+    font-display: swap;
+    font-size: .9rem;
+    color: #ccc;
 }
 
 .footer {
+    width: 100%;
     background: #1f2937;
     color: white;
     padding: 50px 0 30px;
+    line-height: 1.6;
 }
 
 .footer-content {
@@ -252,14 +365,12 @@ div div div a {
     gap: 40px;
 }
 
-.footer-section {
-}
-
 .footer-title {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #2563eb;
+    color: #fff;
+    border-bottom: 1px solid #2563eb;
 }
 
 .footer-section div {
@@ -287,33 +398,30 @@ div div div a {
     .nav {
         display: none;
     }
+    .product-gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .features-grid {
+        padding: 30px;
+    }
 }
 
-.unused-class-1 { display: none; }
-.unused-class-2 { visibility: hidden; }
-.unused-class-3 { opacity: 0; }
-.unused-class-4 { position: absolute; left: -9999px; }
-.unused-class-5 { width: 0; height: 0; overflow: hidden; }
-
-@keyframes heavy-animation {
-    0% { transform: rotate(0deg) scale(1) translateX(0); }
-    25% { transform: rotate(90deg) scale(1.2) translateX(100px); }
-    50% { transform: rotate(180deg) scale(0.8) translateX(-100px); }
-    75% { transform: rotate(270deg) scale(1.5) translateX(50px); }
-    100% { transform: rotate(360deg) scale(1) translateX(0); }
+@media (max-width: 500px) {
+    .hero-content {
+        width: 100%;
+        padding: 0 5px;
+        line-height: 38px;
+    }
+    .hero-title {
+        margin-bottom: 5px;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .cta-button a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
 }
-
-.animated-element {
-    animation: heavy-animation 2s infinite;
-}
-
-div > div + div ~ div:nth-child(odd) .feature-item:hover .feature-icon {
-    transform: scale(1.1);
-}
-
-body div.container div.section div.item:first-child:last-child {
-    margin: 0;
-}
-
-.dummy-1, .dummy-2, .dummy-3, .dummy-4, .dummy-5 { display: block; }
-.dummy-6, .dummy-7, .dummy-8, .dummy-9, .dummy-10 { position: relative; }
